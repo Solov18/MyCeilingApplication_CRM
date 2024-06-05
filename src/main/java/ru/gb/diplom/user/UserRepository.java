@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 import ru.gb.diplom.position.Position;
 import ru.gb.diplom.role.Role;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,7 +18,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     List<User> findByPosition(Position position);
 
-    List<User> findByRolesIn(Role role);
+    List<User> findByRolesIn(Collection<Role> roles);
 
 
 

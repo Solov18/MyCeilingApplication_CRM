@@ -21,10 +21,7 @@ import ru.gb.diplom.util.EntityUtils;
 
 import java.sql.Timestamp;
 import java.time.Instant;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -99,8 +96,8 @@ public class UserService {
                 .collect(Collectors.toList());
     }
 
-    List<UserDto> getUserWithRole(Role role) {
-        return repository.findByRolesIn(role).stream()
+    List<UserDto> getUserWithRole(Collection<Role> roles) {
+        return repository.findByRolesIn(roles).stream()
                 .map(UserMapper::toDto)
                 .collect(Collectors.toList());
     }

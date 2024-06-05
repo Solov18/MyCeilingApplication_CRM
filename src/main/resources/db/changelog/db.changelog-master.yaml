@@ -1,0 +1,83 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: yourname
+      changes:
+        - createTable:
+            tableName: documents
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: accepted_by_client
+                  type: boolean
+              - column:
+                  name: accepted_itern
+                  type: boolean
+              - column:
+                  name: document_value
+                  type: numeric(10,2)
+              - column:
+                  name: accepted_by_id
+                  type: bigint
+              - column:
+                  name: client_id
+                  type: bigint
+              - column:
+                  name: created
+                  type: timestamp
+                  defaultValueComputed: 'CURRENT_TIMESTAMP'
+                  constraints:
+                    nullable: false
+              - column:
+                  name: user_id
+                  type: bigint
+              - column:
+                  name: description
+                  type: varchar(255)
+              - column:
+                  name: filename
+                  type: varchar(255)
+              - column:
+                  name: title
+                  type: varchar(255)
+                  constraints:
+                    unique: true
+              - column:
+                  name: document_category
+                  type: enum('CONTRACT','OFFER','ORDER')
+              - column:
+                  name: document_status
+                  type: enum('FINAL','INITIAL')
+  - changeSet:
+      id: 2
+      author: yourname
+      changes:
+        - createTable:
+            tableName: workflows_documents
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: documents_id
+                  type: bigint
+  - changeSet:
+      id: 3
+      author: yourname
+      changes:
+        - addForeignKeyConstraint:
+            baseTableName: workflows_documents
+            baseColumnNames:
+              - documents_id
+            referencedTableName: documents
+            referencedColumnNames:
+              - id
+            constraintName: FK_workflows_documents_documents_id

@@ -11,6 +11,7 @@ import ru.gb.diplom.user.User;
 import ru.gb.diplom.util.CSVUtils;
 import ru.gb.diplom.util.EntityUtils;
 
+import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.time.Instant;
 import java.util.List;
@@ -86,7 +87,7 @@ public class DocumentService {
         EntityUtils.setter(documentDto.getDocumentStatus(), t -> document.setDocumentStatus(t));
         EntityUtils.setter(documentDto.getDescription(), t -> document.setDescription(t));
         EntityUtils.setter(documentDto.getClient(), t -> document.setClient(t));
-        EntityUtils.setter(documentDto.getValue(), t -> document.setValue(t));
+        EntityUtils.setter(documentDto.getValue(), t -> document.setValue(BigDecimal.valueOf(t)));
         EntityUtils.setter(documentDto.getAuthor(), t -> document.setAuthor(t));
         EntityUtils.setter(documentDto.getAcceptedBy(), t -> document.setAcceptedBy(t));
         EntityUtils.setter(documentDto.getAcceptedItern(), t -> document.setAcceptedItern(t));

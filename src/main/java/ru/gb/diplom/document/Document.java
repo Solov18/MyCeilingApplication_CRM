@@ -10,6 +10,7 @@ import org.hibernate.validator.constraints.NotBlank;
 import ru.gb.diplom.client.Client;
 import ru.gb.diplom.user.User;
 
+import java.math.BigDecimal;
 import java.sql.Timestamp;
 
 @Data
@@ -48,7 +49,7 @@ public class Document {
     private String filename;
 
     @Column(precision=10, scale=2)
-    private Double value;
+    private BigDecimal value;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
@@ -125,11 +126,11 @@ public class Document {
         this.filename = filename;
     }
 
-    public Double getValue() {
+    public BigDecimal getValue() {
         return value;
     }
 
-    public void setValue(Double value) {
+    public void setValue(BigDecimal value) {
         this.value = value;
     }
 

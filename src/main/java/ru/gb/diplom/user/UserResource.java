@@ -13,6 +13,8 @@ import ru.gb.diplom.position.Position;
 import ru.gb.diplom.role.Role;
 import ru.gb.diplom.util.CSVUtils;
 
+import java.util.Collections;
+
 @RequestMapping("/users")
 @RestController
 public class UserResource {
@@ -65,8 +67,8 @@ public class UserResource {
 
 
     @GetMapping("/role/{role}")
-    ResponseEntity getUser(@PathVariable("role") Role role) {
-        return ResponseEntity.ok(service.getUserWithRole(role));
+    public ResponseEntity getUser(@PathVariable("role") Role role) {
+        return ResponseEntity.ok(service.getUserWithRole(Collections.singletonList(role)));
     }
 
     @GetMapping
