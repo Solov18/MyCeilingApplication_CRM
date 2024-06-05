@@ -1,0 +1,27 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorator="layout">
+	
+<section layout:fragment="content">
+
+	<h1>add client</h1>
+	<form th:action="@{/client/add}" method="post"  th:object="${client}" >
+		<div class="form-group">
+			<label> Name : <input class="form-control" type="text" name="name" />
+			</label>
+			<input class="form-control" type="hidden" name="active" value="true"/>
+		</div>
+			<div><label> Representatives :
+				<select th:field="*{representatives}" multiple="multiple">
+					<option th:each="r : ${representatives}"
+						th:text="${r.fullname}" th:value="${r.id}">representatives</option>
+				</select>
+				</label>
+			</div>		
+		<div>
+			<input type="submit" value="add client" />
+		</div>
+	</form>
+	</section>
+
+</html>

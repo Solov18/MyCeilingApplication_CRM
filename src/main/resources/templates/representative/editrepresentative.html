@@ -1,0 +1,24 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorator="layout">
+	
+<section layout:fragment="content">
+
+	<h1>edit representative</h1>
+	<form th:action="@{/representative/edit/{id}(id=${r.id})}" method="post">
+		<div class="form-group">
+			<label> First name: <input class="form-control" type="text" name="firstname" th:field="${r.firstname}"/>
+			</label>
+			<label> Last name: <input class="form-control" type="text" name="lastname" th:field="${r.lastname}"/>
+			</label>
+			<label> Email: <input class="form-control" type="email" name="email" th:field="${r.email}" />
+			</label>
+			<input class="form-control" type="hidden" name="active" value="true"/>
+		</div>
+		<div>
+			<input type="submit" value="confirm changes" />
+		</div>
+	</form>
+	</section>
+
+</html>

@@ -1,0 +1,38 @@
+# Database configuration
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    generate-ddl: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/myCRM
+    username: admin
+    password: admin
+
+# Access configuration
+management:
+  security:
+    enabled: true
+  context-path: /appinfo
+
+# Security configuration
+security:
+  user:
+    name: admin
+    password: admin
+
+# Project info
+info:
+  app:
+    description: Amelco final course workshop
+    java:
+      source: '@java.version@'
+    version: '@version@'
+    name: Customer Relationship Management
+
+# Internationalization
+mvc:
+  locale: pl_PL
+  locale-resolver: fixed
+messages:
+  basename: messages/messages

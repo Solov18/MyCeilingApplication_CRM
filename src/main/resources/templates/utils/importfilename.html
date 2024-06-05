@@ -1,0 +1,21 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorator="layout">
+	
+<section layout:fragment="content">
+
+	<h1>IMPORT DATA</h1>
+	<form th:action="@{/representative/import}" method="post">
+		<div class="form-group">
+			<label> Filename: <input type="text" name="filename"  th:value="*{filename}" />
+			</label>
+			
+			<small> file must be located in the default 'Documents' folder</small>
+		</div>
+		<div>
+			<input type="submit" value="import data from file" />
+		</div>
+	</form>
+	</section>
+
+</html>

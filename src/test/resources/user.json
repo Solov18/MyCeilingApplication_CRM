@@ -1,0 +1,13 @@
+{
+	"username": "magician",
+	"firstname": "John",
+	"lastname": "Doe",
+	"email": "magician@gmail.com",
+	"password": "password",
+	"roles": [
+		{
+			"id": 2,
+			"name": "Admin"
+		}
+	]
+}

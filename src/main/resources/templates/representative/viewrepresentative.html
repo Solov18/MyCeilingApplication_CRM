@@ -1,0 +1,37 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorator="layout">
+
+<section layout:fragment="content">
+
+	<h1>representative</h1>
+	<form th:action="@{/representative/view/{id}(id=${r.id})}" method="post">
+<div class="form-group">
+<!-- 		<table>
+			<tr>
+				<th>Name</th>
+				<td>
+					<p th:text="${r.firstname}">firstname</p>
+				</td>
+			</tr>
+			<tr>
+				<th>Lastname</th>
+				<td>
+					<p th:text="${r.lastname}">lastname</p>
+				</td>
+			</tr>
+			<tr>
+				<th>Email</th>
+				<td>
+					<p th:text="${r.email}">email</p>
+				</td>
+			</tr>
+		</table> -->
+		</div>
+		<div>
+			<input type="submit" value="exit" />
+		</div>
+	</form>
+</section>
+
+</html>

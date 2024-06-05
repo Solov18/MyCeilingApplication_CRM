@@ -1,0 +1,21 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorator="layout">
+	
+<section layout:fragment="content">
+
+	<h1>EXPORT DATA</h1>
+	<form th:action="@{/representative/export}" method="post">
+		<div class="form-group">
+			<label> Filename: <input type="text" name="filename"  th:value="*{filename}" />
+			</label>
+			
+			<small> file will be located in the default 'Documents' folder</small>
+		</div>
+		<div>
+			<input type="submit" value="export data to file" />
+		</div>
+	</form>
+	</section>
+
+</html>

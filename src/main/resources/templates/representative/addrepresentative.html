@@ -1,0 +1,24 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorator="layout">
+	
+<section layout:fragment="content">
+
+	<h1>add representative</h1>
+	<form th:action="@{/representative/add}" method="post">
+		<div class="form-group">
+			<label> First name: <input class="form-control" type="text" name="firstname" />
+			</label>
+			<label> Last name: <input class="form-control" type="text" name="lastname" />
+			</label>
+			<label> Email: <input class="form-control" type="email" name="email" />
+			</label>
+			<input class="form-control" type="hidden" name="active" value="true"/>
+		</div>
+		<div>
+			<input type="submit" value="add representative" />
+		</div>
+	</form>
+	</section>
+
+</html>
