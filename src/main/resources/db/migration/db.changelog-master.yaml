@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - include:
+        file: "classpath:/db/migration/V5__create_roles_table.yaml"
+  - include:
+      file: "classpath:/db/migration/V1__create_addresses_table.yaml"
+  - include:
+      file: "classpath:/db/migration/V2__create_clients_table.yaml"
+  - include:
+      file: "classpath:/db/migration/V3__create_documents_table.yaml"
+
+#  - include:
+#      file: "classpath:/db/migration/V7__create_users_table.yaml"
+  - include:
+      file: "classpath:/db/migration/V4__create_representatives_table.yaml"
+
+  - include:
+      file: "classpath:/db/migration/V6__create_teams_table.yaml"
+
+
+
+
+
+
+
+
